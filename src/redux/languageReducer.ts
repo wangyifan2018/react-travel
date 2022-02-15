@@ -1,17 +1,26 @@
-
 export interface LanguageState {
-    language: "en" | "zh",
-    languageList: {name: string, code: string}[]
+  language: "en" | "zh";
+  languageList: { name: string; code: string }[];
 }
 
 const defaultState: LanguageState = {
-    language: "zh",
-    languageList: [
-        {name:"中文", code:"zh"},
-        {name:"English", code:"en"},
-    ],
-}
+  language: "zh",
+  languageList: [
+    { name: "中文", code: "zh" },
+    { name: "English", code: "en" },
+  ],
+};
 
 export default (state = defaultState, action) => {
-    return state;
-}
+  switch (action.type) {
+    case "add_language":
+      return {
+        ...state,
+        languageList: [...state.languageList, action.payload],
+      };
+    case "change_language":
+      return { ...state, language: action.payload };
+    default:
+      return state;
+  }
+};
