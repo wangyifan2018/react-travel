@@ -5,6 +5,7 @@ import { Header } from "./components/header";
 import { Carousel } from "./components/carousel";
 import { SideMenu } from "./components/sideMenu";
 import { ProductCollection } from "./components/productCollection";
+import { BusinessPartners } from "./components/businessPartners";
 import { Row, Col, Typography } from "antd";
 import { productList1, productList2, productList3 } from "./mockups";
 import sideImage from "./assets/images/sider_2019_12-09.png";
@@ -53,6 +54,7 @@ function App() {
           products={productList3}
         />
       </div>
+      <BusinessPartners />
       <Footer />
     </div>
   );
