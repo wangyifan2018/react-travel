@@ -6,7 +6,7 @@ import { GifOutlined } from "@ant-design/icons";
 
 export const SideMenu: React.FC = () => {
   return (
-    <Menu mode="vertical" className={styles["side-munu"]}>
+    <Menu mode="vertical" className={styles["side-menu"]}>
       {sideMenuList.map((m, index) => (
         <Menu.SubMenu
           key={`side-menu-${index}`}
@@ -19,7 +19,7 @@ export const SideMenu: React.FC = () => {
         >
           {m.subMenu.map((sm, smindex) => (
             <Menu.SubMenu
-              key={`sm-menu-${smindex}`}
+              key={`sub-menu-${smindex}`}
               title={
                 <span>
                   <GifOutlined />
