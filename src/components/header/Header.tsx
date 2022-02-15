@@ -4,17 +4,10 @@ import { Input, Layout, Typography, Menu, Button, Dropdown } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
-import {
-  useHistory,
-  useLocation,
-  useParams,
-  useRouteMatch,
-} from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 export const Header: React.FC = () => {
   const history = useHistory();
-  const location = useLocation();
-  const params = useParams();
-  const match = useRouteMatch();
 
   return (
     <div className={styles["App-header"]}>
@@ -26,7 +19,8 @@ export const Header: React.FC = () => {
             style={{ marginLeft: 15 }}
             overlay={
               <Menu>
-                <Menu.Item>中文</Menu.Item>《<Menu.Item>English</Menu.Item>
+                <Menu.Item>中文</Menu.Item>
+                <Menu.Item>English</Menu.Item>
               </Menu>
             }
             icon={<GlobalOutlined />}
