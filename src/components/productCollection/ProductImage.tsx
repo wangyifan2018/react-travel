@@ -1,7 +1,8 @@
 import React from "react";
 import { Image, Typography } from "antd";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 
-interface ProsType {
+interface ProsType extends RouteComponentProps {
   id: string | number;
   size: "large" | "small";
   imageSrc: string;
@@ -9,15 +10,18 @@ interface ProsType {
   title: string;
 }
 
-export const ProductImage: React.FC<ProsType> = ({
+const ProductImageComponent: React.FC<ProsType> = ({
   id,
   size,
   imageSrc,
   price,
   title,
+  history,
+  location,
+  match,
 }) => {
   return (
-    <>
+    <div onClick={() => history.push(`detail/${id}`)}>
       {size === "large" ? (
         <Image src={imageSrc} height={285} width={490} />
       ) : (
@@ -29,6 +33,8 @@ export const ProductImage: React.FC<ProsType> = ({
           ￥ {price} 起
         </Typography.Text>
       </div>
-    </>
+    </div>
   );
 };
+
+export const ProductImage = withRouter(ProductImageComponent);
