@@ -1,10 +1,12 @@
 import React from "react";
-import { Footer } from "../../components/footer";
-import { Header } from "../../components/header";
-import { Carousel } from "../../components/carousel";
-import { SideMenu } from "../../components/sideMenu";
-import { ProductCollection } from "../../components/productCollection";
-import { BusinessPartners } from "../../components/businessPartners";
+import {
+  Footer,
+  Header,
+  Carousel,
+  SideMenu,
+  ProductCollection,
+  BusinessPartners,
+} from "../../components";
 import { Row, Col, Typography } from "antd";
 import { productList1, productList2, productList3 } from "./mockups";
 import sideImage from "../../assets/images/sider_2019_12-09.png";
