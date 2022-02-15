@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Header.module.css";
 import { Input, Layout, Typography, Menu, Button, Dropdown } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import {
   useHistory,
@@ -39,12 +40,12 @@ export const Header: React.FC = () => {
         </div>
       </div>
       <Layout.Header className={styles["main-header"]}>
-        <span onClick={() => history.push("/")}>
+        <Link to={"/"}>
           <img src={logo} alt="" className={styles["App-logo"]} />
           <Typography.Title level={3} className={styles.title}>
             React 旅游网
           </Typography.Title>
-        </span>
+        </Link>
         <Input.Search
           placeholder={"请输入旅游目的地、主题、或关键字"}
           className={styles["search-input"]}
