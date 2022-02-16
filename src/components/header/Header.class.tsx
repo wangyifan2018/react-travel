@@ -16,9 +16,9 @@ import { Dispatch } from "redux";
 const mapStateToProps = (state: RootState) => {
   return {
     language: state.language.language,
-    languageList: state.language.languageList,
-  };
-};
+    languageList: state.language.languageList
+  }
+}
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
@@ -35,17 +35,18 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
 
 type PropsType = RouteComponentProps & // react-router 路由props类型
   WithTranslation & // i18n props类型
-  ReturnType<typeof mapStateToProps> & // redux store 映射类型
-  ReturnType<typeof mapDispatchToProps>; // redux dispatch 映射类型
+  ReturnType<typeof mapStateToProps> & // redux store 映射类型 
+  ReturnType<typeof mapDispatchToProps>; // redux dispatch 映射类型 
 
 class HeaderComponnet extends React.Component<PropsType> {
+
   menuClickHandler = (e) => {
     console.log(e);
     if (e.key === "new") {
       // 处理新语言添加action
       this.props.addLanguage("新语言", "new_lang");
     } else {
-      this.props.changeLanguage(e.key);
+      this.props.changeLanguage(e.key)
     }
   };
 
@@ -118,7 +119,6 @@ class HeaderComponnet extends React.Component<PropsType> {
   }
 }
 
-export const Header = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(withRouter(HeaderComponnet)));
+export const Header = connect(mapStateToProps, mapDispatchToProps)(
+  withTranslation()(withRouter(HeaderComponnet))
+);

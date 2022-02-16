@@ -1,7 +1,7 @@
 export const CHANGE_LANGUAGE = "change_language";
 export const ADD_LANGUAGE = "add_language";
 
-interface ChangLanguageAction {
+interface ChangeLanguageAction {
   type: typeof CHANGE_LANGUAGE;
   payload: "zh" | "en";
 }
@@ -11,11 +11,11 @@ interface AddLanguageAction {
   payload: { name: string; code: string };
 }
 
-export type LanguageActionTypes = ChangLanguageAction | AddLanguageAction;
+export type LanguageActionTypes = ChangeLanguageAction | AddLanguageAction;
 
 export const changeLanguageActionCreator = (
   languageCode: "zh" | "en"
-): ChangLanguageAction => {
+): ChangeLanguageAction => {
   return {
     type: CHANGE_LANGUAGE,
     payload: languageCode,

@@ -1,6 +1,5 @@
-import { Layout, Typography } from "antd";
-import { use } from "i18next";
 import React from "react";
+import { Layout, Typography } from "antd";
 import { useTranslation, withTranslation } from "react-i18next";
 
 export const Footer: React.FC = () => {

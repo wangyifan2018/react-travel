@@ -65,8 +65,6 @@ export const giveMeDataActionCreator =
       );
       dispatch(fetchRecommendProductSuccessActionCreator(data));
     } catch (error) {
-      if (error instanceof Error) {
-        dispatch(fetchRecommendProductFailActionCreator(error.message));
-      }
+      // dispatch(fetchRecommendProductFailActionCreator(error.message));
     }
   };

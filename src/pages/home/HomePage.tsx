@@ -22,15 +22,15 @@ const mapStateToProps = (state: RootState) => {
   return {
     loading: state.recommendProducts.loading,
     error: state.recommendProducts.error,
-    productList: state.recommendProducts.productList,
-  };
+    productList: state.recommendProducts.productList
+  }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     giveMeData: () => {
       dispatch(giveMeDataActionCreator());
-    },
+    }
   };
 };
 
